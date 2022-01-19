@@ -1,9 +1,11 @@
+import re
+
 # addProduct
 # add product to the storage if does not exit already, and amount and price is not negativ.
 def addProduct(warehouse, product_name, price, amount):
-    if not product_name in warehouse or price < 0 or amount < 0:
+    if product_name in warehouse or float(price) < 0 or float(amount) < 0:
         return
-    warehouse[product_name] = [price, amount, 0] #value[2] = quantitiy of units sold
+    warehouse[product_name] = [float(price), float(amount), 0] #value[2] = quantitiy of units sold
 
 # changeProductAmount
 # change product amount in storage if already exit.
@@ -11,40 +13,46 @@ def addProduct(warehouse, product_name, price, amount):
 def changeProductAmount(warehouse, product_name, amount_to_update):
     if not product_name in warehouse:
         return
-    warehouse[product_name][1] += amount_to_update
+    warehouse[product_name][1] += float(amount_to_update)
 
 # shipOrder
 # ship order if item exit in storage and amount of quantaties is not lower than ordered
 # update the counter of selling of the item
 def shipOrder(warehouse, orders):
-    for product in range(2,len(orders),2):
-        if orders[product] == "-": 
+    for product_idx in range(2,len(orders)):
+        if orders[product_idx] == "--": 
             continue
-        if not product in warehouse:
+        if not orders[product_idx] in warehouse:
             continue
-        if warehouse[product][1] < orders[product+1]:
+        if warehouse[orders[product_idx]][1] < float(orders[product_idx+1]):
             continue
-        warehouse[product][1] - orders[product+1]
-        warehouse[product][2] += 1
+        warehouse[orders[product_idx]][1] -= float(orders[product_idx+1])
+        warehouse[orders[product_idx]][2] += float(orders[product_idx+1])
 
 # createWarehouse
 # create warehouse due to commands in given file text
 def createWarehouse(file_name):
     warehouse = {}
-    for line in file_name:
-        read_line = line.split()
+    file = open(file_name, "r")
+    lines = file.readlines()
+    for line in lines:
+        read_line = re.split(', | ',line)
         if read_line[0] == "add":
             addProduct (warehouse, *read_line[2:])
         elif read_line[0] == "change":
             changeProductAmount(warehouse, *read_line[2:])
         else:
             shipOrder(warehouse, read_line)
+    file.close()
+    return warehouse
 
 # find_best_selling_product
 # return taple of best product name and his profits
 def find_best_selling_product(file_name):
     warehouse = createWarehouse(file_name)
-    sorted_warehouse = sorted(warehouse.items(), key=lambda tup: tup[1][2], reverse= True)
+    if not warehouse:
+        return ("", 0)
+    sorted_warehouse = sorted(warehouse.items(), key=lambda tup: (-tup[1][2]*tup[1][0], tup[0]))
     key, val = sorted_warehouse[0]
     return (key, val[0]*val[2])
 
