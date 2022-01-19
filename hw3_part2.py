@@ -22,7 +22,6 @@ def get_palindrom_dict(str):
                 if not length in palindrom_dict:
                     palindrom_dict[length] = []
                 palindrom_dict[length].append(str[start_idx:start_idx + length])
-    print("palindrom=",palindrom_dict)
     return palindrom_dict
 
 # checkIfTwoStringsAreMatchmatch
