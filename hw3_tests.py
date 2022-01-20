@@ -29,7 +29,7 @@ test9_expected_result = ('', 0)
 test10 = hw3_part1.find_k_most_expensive_products("hw3_part1_tests_files/items5.txt", 3)
 test10_expected_result = []
 test11 = hw3_part1.find_best_selling_product("hw3_part1_tests_files/items6.txt")
-test11_expected_result = ('baloon', 23000)
+test11_expected_result = ('bike', 52200)
 test12 = hw3_part1.find_k_most_expensive_products("hw3_part1_tests_files/items6.txt", 7)
 test12_expected_result = ['apple', 'lamp', 'bike', 'banana', 'chair', 'pineapple', 'phone']
 
@@ -127,12 +127,13 @@ tests1 = {
 tests2 = {
     "dkoeoerp": True,
     "ctaptmapld": True,
-    "sdaadd": False,
+    "sdaadd": True,
+    "dsaadd": False,
     "abababab": True,
     "ababababa": False,
     "aabbccddeeffgg": True,
     "aabbccddeeffgh": True,
-    "aabbccddeeffgf": False,
+    "aabbccddeeffgf": True,
     "": True
 }
 
@@ -175,6 +176,3 @@ else:
 print()
 if (all(results) and count_tests1 == len(tests1) and count_tests2 == len(tests2)):
     print("CONGRATULATIONS! You passed all part 1 and part 2 tests!")
-
-#if __name__ == "__main__":
-#    print(find_k_most_expensive_products("ourtest.txt", 10))
