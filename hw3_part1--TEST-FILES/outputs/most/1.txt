@@ -1,0 +1,6 @@
+[]
+['bart_simpson']
+['bart_simpson', 'homer_simpson']
+['bart_simpson', 'homer_simpson', 'lisa_simpson']
+['bart_simpson', 'homer_simpson', 'lisa_simpson', 'marge_simpson']
+['bart_simpson', 'homer_simpson', 'lisa_simpson', 'marge_simpson', 'mona_simpson']

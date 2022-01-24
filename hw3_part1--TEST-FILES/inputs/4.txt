@@ -1,0 +1,11 @@
+add product rock 30 2
+add product rock 20 1
+add product r&b 55 20
+add product pop -5 5
+add product pop 5 -5
+ship order pop, 2 -- rock, -100
+change amount rap 100
+ship order rock, 5 -- rock, 2
+change amount rock 100
+change amount rock 0
+ship order rock, 5

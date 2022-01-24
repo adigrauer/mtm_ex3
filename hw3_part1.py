@@ -24,6 +24,8 @@ def shipOrder(warehouse, orders):
             continue
         if not orders[product_idx] in warehouse:
             continue
+        if float(orders[product_idx+1]) < 0:
+            continue
         if warehouse[orders[product_idx]][1] < float(orders[product_idx+1]):
             continue
         warehouse[orders[product_idx]][1] -= float(orders[product_idx+1])

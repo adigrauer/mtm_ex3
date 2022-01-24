@@ -1,0 +1,10 @@
+add product a 1 20
+add product b 2 20
+add product c 3 20
+add product d 4 20
+ship order a, -1 -- a, 1 -- b, 21 -- b, 1 -- c, 1 -- d, 0 -- e, 1 -- d, 1
+add product e 5 20
+add product f 6 20
+ship order a, 1 -- b, 1 -- c, 1 -- d, 1 -- e, 5
+change amount a 0
+ship order a, 1 -- b, 1 -- c, 1 -- d, 1 -- e, 5

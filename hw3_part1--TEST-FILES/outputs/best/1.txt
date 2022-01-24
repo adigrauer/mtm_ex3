@@ -1,0 +1,1 @@
+('marge_simpson', 2226.0)

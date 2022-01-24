@@ -1,0 +1,1 @@
+[]['chair']['chair', 'lamp']['chair', 'lamp', 'pizza']['chair', 'lamp', 'pizza', 'phone']['chair', 'lamp', 'pizza', 'phone', 'baloon']['chair', 'lamp', 'pizza', 'phone', 'baloon', 'apple']
