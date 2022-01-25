@@ -3,7 +3,7 @@
 
 from hw3_part1 import *
 
-TESTS_NUM = 5
+TESTS_NUM = 6
 
 class static_vars:
     first_fun_cnt = 1

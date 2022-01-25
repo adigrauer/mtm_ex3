@@ -1,0 +1,6 @@
+add product moed_a 85 1
+add product moed_b 85 1
+ship order moed_a, 1 -- moed_b, 1
+add product moed_c 0 0
+change amount moed_c -85
+ship order moed_c, 50
