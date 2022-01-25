@@ -1,6 +1,6 @@
-add product homer_simpson 742 41
+add product homer_simpson 742 41.5
 add product marge_simpson 742 39
-add product bart_simpson 742 10
+add product bart_simpson 742.5 10
 add product lisa_simpson 742 8
 change amount mona_simpson 0
 add product mona_simpson 742 79

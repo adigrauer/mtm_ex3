@@ -1,5 +1,5 @@
-from part1 import find_k_most_expensive_products, find_best_selling_product
-from part2 import check_match, get_palindrom_dict
+from hw3_part1 import find_k_most_expensive_products, find_best_selling_product
+from hw3_part2 import check_match, get_palindrom_dict
 
 def compare_dict1_to_dict2 (dict1, dict2):
     for key in dict1:
